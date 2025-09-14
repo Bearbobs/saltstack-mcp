@@ -2,6 +2,11 @@
 
 ## Setup
 
+### Requirement
+- Docker
+- Docker MCP Gateway
+- MCP Client
+
 ### Step 1: Build Docker Image
 
 ```
@@ -22,7 +27,7 @@ docker mcp secret set SALT_API_URL="http://your-salt-master:8000"
 docker mcp secret list
 ```
 
-### Step 3: Create Custom Catalog
+### Step 3: Create Custom Catalogue
 
 custom.yaml
 ```
@@ -66,6 +71,15 @@ registry:
         - automation
       license: MIT
       owner: local
+```
+
+### Step 4: Add to registry
+
+```
+registry:
+  # ... existing servers ...
+  saltapi:
+    ref: ""
 ```
 
 
